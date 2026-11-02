@@ -1,0 +1,128 @@
+/* The same floating shell is used in the library and in all three games. */
+.floating-navbar.library-header,
+.floating-navbar.header {
+  position: sticky;
+  top: 20px;
+  z-index: 40;
+  width: min(1120px, calc(100% - 64px));
+  height: 78px;
+  margin: 22px auto 0;
+  padding: 0 19px 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--glass);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--nav-shadow);
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+}
+.floating-navbar .library-brand { font-size: 26px; gap: 10px; }
+.floating-navbar .library-brand small { font-size: 6px; letter-spacing: 1.6px; margin-top: 5px; }
+.floating-navbar .library-brand-symbol { width: 37px; height: 37px; border-radius: 13px; background: var(--surface-soft); color: var(--accent); }
+.floating-navbar .library-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 42px;
+  gap: 3px;
+  margin: 0;
+  padding: 4px;
+  align-items: stretch;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.floating-navbar .library-nav button {
+  border-radius: 999px;
+  padding: 0 15px;
+  color: var(--muted);
+  font-size: 11px;
+  gap: 7px;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.floating-navbar .library-nav button.active { background: var(--glass); color: var(--heading); box-shadow: 0 2px 8px rgb(30 55 34 / 5%); }
+.floating-navbar .library-nav button:hover { color: var(--heading); }
+.floating-navbar .library-nav button::after { content: none; }
+.library-header-actions,
+.game-header-actions { display: flex; align-items: center; gap: 16px; }
+.library-header-actions { margin-left: auto; }
+.library-header-actions .library-offline { font-size: 9px; }
+.theme-toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--subtle);
+}
+.theme-symbol { display: grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
+.theme-symbol.active { color: var(--accent); background: var(--glass); box-shadow: 0 2px 7px rgb(28 50 29 / 9%); }
+.theme-toggle:hover .theme-symbol:not(.active) { color: var(--heading); }
+.game-header-actions { gap: 10px; }
+.game-header-actions .icon-button { border: 1px solid var(--line); background: var(--surface); color: var(--muted); width: 36px; height: 36px; border-radius: 50%; }
+.game-header-actions .icon-button:hover { background: var(--surface-hover); color: var(--heading); }
+.floating-navbar .brand-mark { color: var(--accent); }
+.floating-navbar .brand { color: var(--heading); }
+.floating-navbar .back-library { color: var(--muted); }
+.floating-navbar .back-library:hover { color: var(--heading); }
+
+@media (max-width: 1080px) {
+  .library-header-actions .library-offline { display: none; }
+}
+@media (max-width: 760px) {
+  .floating-navbar.library-header,
+  .floating-navbar.header { top: 12px; width: calc(100% - 28px); margin-top: 14px; }
+  .floating-navbar.library-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    height: auto;
+    min-height: 0;
+    border-radius: 27px;
+    padding: 15px 17px 12px;
+    gap: 13px;
+  }
+  .floating-navbar .library-brand { font-size: 24px; }
+  .floating-navbar .library-brand small { font-size: 5px; letter-spacing: 1.1px; }
+  .floating-navbar .library-brand-symbol { height: 34px; width: 34px; }
+  .floating-navbar .library-header-actions { grid-column: 2; grid-row: 1; }
+  .floating-navbar .library-nav {
+    position: static;
+    transform: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: max-content;
+    max-width: 100%;
+    margin: auto;
+    height: 38px;
+    order: unset;
+    gap: 3px;
+  }
+  .floating-navbar .library-nav button { font-size: 10px; padding: 0 16px; }
+  .floating-navbar.header { height: 71px; min-height: 0; padding: 0 15px; gap: 9px; }
+  .theme-symbol { width: 26px; height: 26px; }
+  .theme-toggle { gap: 1px; padding: 3px; }
+  .game-header-actions { gap: 6px; }
+  .game-header-actions .icon-button { width: 31px; height: 31px; }
+  .game-header-actions .icon-button svg { width: 17px; }
+  .floating-navbar .brand { font-size: 23px; gap: 4px; }
+  .floating-navbar .brand-mark { width: 28px; height: 35px; font-size: 25px; }
+  .floating-navbar .brand-sub { font-size: 6px; letter-spacing: 1.3px; }
+  .floating-navbar .back-library { font-size: 9px; gap: 5px; }
+}
+@media (max-width: 520px) {
+  .floating-navbar.header { padding: 0 12px; }
+  .floating-navbar .back-library span { max-width: 49px; line-height: 1.5; }
+  .floating-navbar.header .brand { font-size: 21px; }
+  .floating-navbar.header .brand-mark { display: none; }
+  .floating-navbar.header .brand-sub { font-size: 5px; letter-spacing: .8px; }
+  .game-header-actions { gap: 5px; }
+  .game-header-actions .theme-symbol { width: 23px; height: 23px; }
+}

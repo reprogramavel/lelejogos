@@ -1,0 +1,13 @@
+Vocabulário externo do Termo / Lelê Jogos
+
+dictionary-pt 4.0.0 / VERO — Raimundo Santos Moura e colaboradores.
+Copyright (C) 2006-2013 Raimundo Santos Moura.
+Dados utilizados sob Mozilla Public License 2.0.
+Fonte original: https://github.com/wooorm/dictionaries/tree/8cfea406b505e4d7df52d5a19bce525df98c54ab/dictionaries/pt
+
+pt-br — Copyright 2021 Fernando Serboncini. Licença MIT.
+Fonte original: https://github.com/fserb/pt-br/tree/93ba2a6f3b2f85262fba72df09d448c6bb2fa50a
+
+Alterações: expansão das flexões, filtragem de entradas com cinco letras, normalização de acentos, combinação das fontes e eliminação de duplicatas.
+O código-fonte da lista derivada está em src/features/termo/external-words.ts, em formato de texto simples; ele também é incorporado como texto no JavaScript do aplicativo. As fontes originais, licenças e o script de transformação estão disponíveis no projeto, nas pastas vendor/ e scripts/generate-vocabulary.mjs. Consulte vendor/README.md.
+As licenças de dados e seus avisos acompanham o conteúdo incorporado do aplicativo. As bibliotecas nspell e is-buffer são usadas apenas durante a preparação do vocabulário; seu código não é incluído no jogo.

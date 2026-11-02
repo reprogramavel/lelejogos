@@ -1,0 +1,36 @@
+{
+  "name": "nspell",
+  "version": "2.1.5",
+  "description": "Hunspell compatible spell checker",
+  "license": "MIT",
+  "keywords": [
+    "spell",
+    "spellcheck",
+    "spellchecker",
+    "spell check",
+    "spell checker",
+    "check",
+    "spelling",
+    "myspell",
+    "hunspell"
+  ],
+  "repository": "wooorm/nspell",
+  "bugs": "https://github.com/wooorm/nspell/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "is-buffer": "^2.0.0"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}
+

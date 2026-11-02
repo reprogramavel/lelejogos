@@ -1,0 +1,80 @@
+/* The fullscreen host contains the game, its actions and modal portals. */
+.game-view-controls { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 8px 12px; color: var(--text); }
+.game-view-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.game-view-actions button { color: inherit; }
+.game-view-actions .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-soft); }
+.game-view-controls .game-only-fullscreen { display: none; }
+.game-fullscreen-error { font-size: 13px; }
+.pife-table .game-view-controls { --text: #eff5e9; --accent: #e0e8df; --subtle: #b7c6b8; --line: rgb(219 231 209 / 20%); --surface-soft: rgb(217 231 215 / 8%); --glass: rgb(219 231 209 / 12%); --glass-control: linear-gradient(145deg, rgb(232 255 243 / 14%), rgb(232 255 243 / 4%)); --glass-edge: rgb(231 255 243 / 25%); }
+:is(.pife-table, .termo-panel):fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+}
+:is(.pife-table, .termo-panel):fullscreen > * { flex-shrink: 0; }
+:is(.pife-table, .termo-panel):fullscreen::backdrop { background: var(--page); }
+:is(.pife-table, .termo-panel):fullscreen .game-view-controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  min-height: 64px;
+  justify-content: space-between;
+  background: var(--content-surface);
+  border-bottom: 1px solid var(--line);
+}
+:is(.pife-table, .termo-panel):fullscreen .game-only-fullscreen { display: inline-flex; align-items: center; }
+.game-view-new { min-height: 44px; padding: 8px 12px; gap: 6px; border-radius: 999px; background: var(--surface-soft); font-size: 13px; }
+.game-view-controls strong { font-size: 18px; font-weight: 600; }
+.pife-table:fullscreen { background: var(--felt); }
+.pife-table:fullscreen .game-view-controls { background: var(--brand-green); }
+.pife-table:fullscreen .pife-center { flex-grow: 1; }
+.pife-table:fullscreen .pife-hand { gap: clamp(4px, 1vw, 14px); }
+.pife-table:fullscreen .pife-hand-bottom { position: sticky; bottom: 0; background: var(--brand-green); }
+.termo-panel:fullscreen { background: var(--content-surface); padding-bottom: 16px; }
+.termo-panel:fullscreen .termo-panel-top { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 10px 0; }
+.termo-panel:fullscreen .word-board { padding-top: 12px; margin-top: auto; }
+.termo-panel:fullscreen .word-tile { width: clamp(32px, min(13vw, (100dvh - 460px) / 6), 72px); height: clamp(32px, min(13vw, (100dvh - 460px) / 6), 72px); font-size: clamp(22px, 4vh, 34px); }
+.termo-panel:fullscreen .word-feedback { min-height: 46px; padding: 10px 16px; }
+.termo-panel:fullscreen .word-keyboard { width: calc(100% - 24px); }
+.termo-panel:fullscreen .word-legend { padding: 14px 12px 0; margin-bottom: auto; }
+.termo-panel:fullscreen .word-result { margin: 0 auto 12px; }
+@media (max-width: 520px) {
+  .game-view-controls { gap: 6px; padding: 8px; }
+  .game-view-actions { gap: 5px; }
+  .game-view-new { width: 44px; padding: 8px; justify-content: center; }
+  .game-view-new span { display: none; }
+  .game-view-controls strong { font-size: 16px; }
+  .pife-table:fullscreen .pife-topbar { padding: 10px 14px; }
+  .pife-table:fullscreen .pife-opponent { padding-top: 12px; }
+  .pife-table:fullscreen .pife-center { padding: 12px 14px; }
+  .pife-table:fullscreen .pife-hand { flex-wrap: nowrap; gap: 0; padding: 16px 14px 20px; }
+  .pife-table:fullscreen .pife-hand .hand-card { width: min(64px, 16vw); height: min(92px, 23vw); }
+  .pife-table:fullscreen .pife-hand .hand-card + .hand-card { margin-left: max(-32px, -8vw); }
+}
+@media (max-width: 520px) and (max-height: 760px) {
+  .pife-table:fullscreen .pife-topbar { padding: 6px 14px; }
+  .pife-table:fullscreen .pife-opponent { padding: 8px 14px 0; }
+  .pife-table:fullscreen .pife-opponent small { display: none; }
+  .pife-table:fullscreen .cpu-hand { min-height: 48px; padding: 8px 12px; }
+  .pife-table:fullscreen .cpu-card-back { width: 28px; height: 40px; }
+  .pife-table:fullscreen .pife-center { padding: 8px 14px; }
+  .pife-table:fullscreen .pife-center .hand-card { width: 56px; height: 80px; }
+  .pife-table:fullscreen .pife-stock > span { width: 30px; height: 30px; font-size: 25px; margin-top: 8px; }
+  .pife-table:fullscreen .pife-stock small { margin-top: 5px; }
+  .pife-table:fullscreen .pife-pile { gap: 6px; }
+  .pife-table:fullscreen .pife-instruction { margin: 0 12px 8px; padding: 8px 10px; }
+  .pife-table:fullscreen .pife-hand-header { padding: 0 14px 0; }
+}

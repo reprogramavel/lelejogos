@@ -1,0 +1,40 @@
+# Dependências instaladas
+node_modules/
+
+# Compilação, executável e caches locais
+/dist/
+/release/
+/.cache/
+/desktop/bin/
+/desktop/obj/
+
+# Relatórios gerados por testes
+/coverage/
+/test-results/
+/playwright-report/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Variáveis locais e chaves de assinatura
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pfx
+*.p12
+*.key
+
+# Configurações pessoais e arquivos do sistema
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# vendor/, package-lock.json e o vocabulário gerado em src/ são versionados.

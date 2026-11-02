@@ -1,0 +1,36 @@
+{
+  "name": "lele-jogos",
+  "version": "1.9.0",
+  "type": "module",
+  "private": true,
+  "description": "Uma biblioteca de jogos para Windows",
+  "author": "Lelê Jogos",
+  "scripts": {
+    "vocabulary:generate": "node scripts/generate-vocabulary.mjs",
+    "vocabulary:stats": "node scripts/vocabulary-stats.mjs",
+    "dev": "node scripts/build.mjs --serve",
+    "build": "node node_modules/typescript/bin/tsc --noEmit && node scripts/build.mjs",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "test": "node --test tests/unit/*.test.ts",
+    "test:ui": "node tests/ui/app.test.mjs",
+    "check": "npm run build && npm test && npm run test:ui",
+    "package": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1 && node --test tests/desktop/*.test.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "lucide-react": "1.49.0"
+  },
+  "devDependencies": {
+    "dictionary-pt": "file:vendor/dictionary-pt",
+    "nspell": "file:vendor/nspell",
+    "is-buffer": "file:vendor/is-buffer",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.7.2",
+    "esbuild": "0.25.12"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

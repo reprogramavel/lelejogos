@@ -1,0 +1,18 @@
+{
+  "dictionaryProcessedEntries": 312368,
+  "dictionaryFiveLetterWords": 18213,
+  "fserbFiveLetterWords": 8625,
+  "combinedFiveLetterWords": 18548,
+  "totalAcceptedWords": 18564,
+  "possibleAnswers": 463,
+  "excludedAbbreviations": [
+    "ASCII",
+    "HTTPS"
+  ],
+  "sourceHashes": {
+    "vendor/dictionary-pt/index.dic": "b7b250a77c102fb6acb78f47496d06aeca4e017b11ebaae561593ff18619ed99",
+    "vendor/dictionary-pt/index.aff": "4efda79a081c98d83136c4cc19960ba3e20e16a6982e89b9b55a01169c03f1a8",
+    "vendor/pt-br/lexico": "6f8d8642ac6c63e79ab84a21e7b562d062395021be718ac139cfa7e40f0e4f3d",
+    "vendor/pt-br/conjugacoes": "106983167e89e6a07e0467d031f4163c3c898fa56e458ea9b5da2e0f5cad1783"
+  }
+}

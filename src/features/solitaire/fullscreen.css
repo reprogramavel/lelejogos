@@ -1,0 +1,81 @@
+.game-shell .fullscreen { display: inline-flex; }
+.tools > .fullscreen-new-game,
+.fullscreen-actions { display: none; }
+
+/* Fullscreen belongs to the game section, never to the surrounding page. */
+.game-shell:fullscreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100dvh;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background: var(--felt-solid);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.game-shell:fullscreen::backdrop { background: var(--page); }
+.game-shell:fullscreen::after { content: none; }
+.game-shell:fullscreen .game-title { color: #edf6e6; }
+.game-shell:fullscreen .game-top,
+.game-shell:fullscreen .game-bottom {
+  flex: 0 0 auto;
+  min-height: 60px;
+  height: auto;
+  padding: 12px 24px;
+}
+.game-shell:fullscreen .table-area {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-color: #a5c2ae66 transparent;
+}
+.game-shell:fullscreen .table {
+  --card-width: clamp(36px, min(calc((100vw - 48px) / 8), calc((100dvh - 375px) / 2.84)), 164px);
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100%;
+  padding: 24px clamp(16px, 3vw, 42px);
+  margin: 0 auto;
+}
+.game-shell:fullscreen .top-piles { margin-bottom: 46px; }
+.game-shell:fullscreen .corner b { font-size: clamp(14px, calc(var(--card-width) * .22), 32px); }
+.game-shell:fullscreen .corner > span { font-size: clamp(11px, calc(var(--card-width) * .16), 24px); }
+.game-shell:fullscreen .pip { font-size: calc(var(--card-width) * .55); }
+.game-shell:fullscreen .pip.royal { font-size: calc(var(--card-width) * .48); }
+.game-shell:fullscreen .foundation-suit { font-size: calc(var(--card-width) * .42); }
+.game-shell:fullscreen .back-design > span { font-size: calc(var(--card-width) * .34); }
+.game-shell:fullscreen .tools > .fullscreen-new-game { display: inline-flex; }
+.game-shell:fullscreen .fullscreen-actions { display: flex; align-items: center; gap: 6px; }
+.game-shell:fullscreen .theme-toggle {
+  --surface-soft: rgb(231 255 243 / 8%);
+  --line: rgb(231 255 243 / 14%);
+  --glass: rgb(231 255 243 / 14%);
+  --glass-control: linear-gradient(145deg, rgb(232 255 243 / 14%), rgb(232 255 243 / 4%));
+  --glass-edge: rgb(231 255 243 / 25%);
+  --subtle: #9fbaa9;
+  --accent: #dae9d2;
+}
+.app:has(.game-shell:fullscreen) > .header,
+.app:has(.game-shell:fullscreen) > main > .heading,
+.app:has(.game-shell:fullscreen) > main > .under-table,
+.app:has(.game-shell:fullscreen) > main > footer { display: none; }
+
+@media (max-width: 720px) {
+  .game-shell:fullscreen .game-top { padding: 11px 15px; min-height: 54px; }
+  .game-shell:fullscreen .game-bottom { flex-wrap: wrap; gap: 8px; padding: 9px 12px; }
+  .game-shell:fullscreen .tools,
+  .game-shell:fullscreen .bottom-right { width: 100%; justify-content: center; }
+  .game-shell:fullscreen .table { --card-width: clamp(32px, min(calc((100vw - 48px) / 7.6), calc((100dvh - 390px) / 2.84)), 110px); padding: 20px 14px; }
+  .game-shell:fullscreen .top-piles { margin-bottom: 35px; }
+  .game-shell:fullscreen .corner { left: 5px; }
+  .game-shell:fullscreen .corner.bottom { left: auto; right: 5px; }
+}
