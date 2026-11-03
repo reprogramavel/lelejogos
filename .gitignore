@@ -3,7 +3,9 @@ node_modules/
 
 # Compilação, executável e caches locais
 /dist/
-/release/
+# Mantém apenas o executável publicado; outros arquivos de entrega são ignorados.
+/release/*
+!/release/LeleJogos.exe
 /.cache/
 /desktop/bin/
 /desktop/obj/
